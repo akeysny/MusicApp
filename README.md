@@ -1,3 +1,14 @@
+# MusicApp Part 2
+
+- [x] User can tap on the play button
+- [x] User can tap on the pause button
+- [x] User can utilize skipping and going back feature
+
+App Walkthrough GIF
+
+<img src="http://g.recordit.co/xKmLVzfC87.gif" width=250><br>
+
+
 # MusicApp
 
 Music App is a music streaming app using SwiftUI in Xcode.
