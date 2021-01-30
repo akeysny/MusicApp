@@ -13,6 +13,8 @@
 		D6773C9225C4B0ED005F1AD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6773C9125C4B0ED005F1AD7 /* Preview Assets.xcassets */; };
 		D6773C9D25C4B0EE005F1AD7 /* MusicAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6773C9C25C4B0EE005F1AD7 /* MusicAppTests.swift */; };
 		D6773CA825C4B0EE005F1AD7 /* MusicAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6773CA725C4B0EE005F1AD7 /* MusicAppUITests.swift */; };
+		D6773CC725C4C469005F1AD7 /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6773CC625C4C469005F1AD7 /* BlurEffect.swift */; };
+		D6773CCC25C4ED3A005F1AD7 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6773CCB25C4ED3A005F1AD7 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		D6773CA325C4B0EE005F1AD7 /* MusicAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6773CA725C4B0EE005F1AD7 /* MusicAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppUITests.swift; sourceTree = "<group>"; };
 		D6773CA925C4B0EE005F1AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6773CC625C4C469005F1AD7 /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; };
+		D6773CCB25C4ED3A005F1AD7 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				D6773C8A25C4B0ED005F1AD7 /* MusicAppApp.swift */,
 				D6773C8C25C4B0ED005F1AD7 /* ContentView.swift */,
+				D6773CCB25C4ED3A005F1AD7 /* PlayerView.swift */,
+				D6773CC625C4C469005F1AD7 /* BlurEffect.swift */,
 				D6773C8E25C4B0ED005F1AD7 /* Assets.xcassets */,
 				D6773C9325C4B0ED005F1AD7 /* Info.plist */,
 				D6773C9025C4B0ED005F1AD7 /* Preview Content */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6773CC725C4C469005F1AD7 /* BlurEffect.swift in Sources */,
 				D6773C8D25C4B0ED005F1AD7 /* ContentView.swift in Sources */,
 				D6773C8B25C4B0ED005F1AD7 /* MusicAppApp.swift in Sources */,
+				D6773CCC25C4ED3A005F1AD7 /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
