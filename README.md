@@ -1,3 +1,11 @@
+# MusicApp Part 3
+
+-[x] Connected our app to Firebase
+-[x] How to connect the data within Firebase into our existinig design
+<img src="http://g.recordit.co/nMExAIYNeM.gif" width=250><br>
+
+
+
 # MusicApp Part 2
 
 - [x] User can tap on the play button
