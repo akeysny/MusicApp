@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Album : Hashable {
     var id = UUID()
@@ -23,32 +24,7 @@ struct Song: Hashable {
 }
 struct ContentView: View {
     
-    var albums = [Album(name: "Album 1", image: "1",
-            songs: [Song(name: "Song 1", time: "2:36"),
-                    Song(name: "Song 2", time: "2:36"),
-                    Song(name: "Song 3", time: "2:36"),
-                    Song(name: "Song 4", time: "2:36")]),
-                  Album(name: "Album 2", image: "2",
-                          songs: [Song(name: "Song 1", time: "2:36"),
-                                  Song(name: "Song 2", time: "2:36"),
-                                  Song(name: "Song 3", time: "2:36"),
-                                  Song(name: "Song 4", time: "2:36")]),
-                  Album(name: "Album 3", image: "3",
-                          songs: [Song(name: "Song 1", time: "2:36"),
-                                  Song(name: "Song 2", time: "2:36"),
-                                  Song(name: "Song 3", time: "2:36"),
-                                  Song(name: "Song 4", time: "2:36")]),
-                  Album(name: "Album 4", image: "4",
-                          songs: [Song(name: "Song 1", time: "2:36"),
-                                  Song(name: "Song 2", time: "2:36"),
-                                  Song(name: "Song 3", time: "2:36"),
-                                  Song(name: "Song 4", time: "2:36")]),
-                  Album(name: "Album 5", image: "5",
-                          songs: [Song(name: "Song 1", time: "2:36"),
-                                  Song(name: "Song 2", time: "2:36"),
-                                  Song(name: "Song 3", time: "2:36"),
-                                  Song(name: "Song 4", time: "2:36")])]
-    
+    @ObservedObject var data : OurData
     @State private var currentAlbum : Album?
     
     
@@ -57,7 +33,7 @@ struct ContentView: View {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     LazyHStack {
-                                ForEach(self.albums, id: \.self, content: {
+                        ForEach(self.data.albums, id: \.self, content: {
                                     album in
                                     AlbumArt(album: album, isWithText: true).onTapGesture {
                                         self.currentAlbum = album
@@ -66,16 +42,21 @@ struct ContentView: View {
                     }
                     })
                     LazyVStack {
-                        ForEach((self.currentAlbum?.songs ?? self.albums.first?.songs) ??  [Song(name: "Song 1", time: "2:36"),
+                        if self.data.albums.first == nil {
+                            EmptyView()
+                            
+                        } else {
+                            ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ??  [Song(name: "Song 1", time: "2:36"),
                                                                                     Song(name: "Song 2", time: "2:36"),
                                                                                     Song(name: "Song 3", time: "2:36"),
                                                                                     Song(name: "Song 4", time: "2:36")],
-                    id: \.self,
-                    content: {
-                    song in
-                        SongCell(album: currentAlbum ?? albums.first!, song: song)
+                                    id: \.self,
+                                    content: {
+                                    song in
+                        SongCell(album: currentAlbum ?? self.data.albums.first!, song: song)
                     })
                 }
+            }
             }.navigationTitle("My Band Name")
         }
     }
@@ -117,8 +98,3 @@ struct ContentView: View {
                                }).buttonStyle(PlainButtonStyle())
             }
         }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
