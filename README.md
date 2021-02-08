@@ -2,6 +2,9 @@
 
 - [x] Connected our app to Firebase
 - [x] How to connect the data within Firebase into our existinig design
+
+App Walkthrough GIF
+
 <img src="http://g.recordit.co/nMExAIYNeM.gif" width=250><br>
 
 
